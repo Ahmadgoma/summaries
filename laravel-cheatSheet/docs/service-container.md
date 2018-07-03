@@ -31,6 +31,7 @@ $this->app->bind('HelpSpot\API', function ($app) {
     return new HelpSpot\API($app->make('HttpClient'));
 });
 ```
+[More here - service providers](./service-providers.md)
 
 ### Binding A Singleton (Singleton DP)
 ```php
