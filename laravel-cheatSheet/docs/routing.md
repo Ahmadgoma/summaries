@@ -7,7 +7,15 @@
 * [Regular Expression Constraints](#regular-expression-constraints)
 * [Named Routes](#named-routes)
 * [Route Groups](#route-groups)
+    * Middleware
+    * Namespaces
+    * Sub-Domain Routing
+    * Route Prefixes
+    * Route Name Prefixes
 * [Route Model Binding](#route-model-binding)
+    * Implicit Binding
+    * Explicit Binding
+        * Customizing The Resolution Logic
 * [Rate Limiting](#rate-limiting)
 * [Accessing The Current Route](#accessing-the-current-route)
 

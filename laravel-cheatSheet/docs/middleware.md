@@ -3,6 +3,9 @@
 * [Defining Middleware](#defining-middleware)
 * [Before and After Middleware](#before-and-after-middleware)
 * [Registering Middleware](#registering-middleware)
+    * Global Middleware
+    * Assigning Middleware To Routes
+    * Middleware Groups
 * [Middleware Parameters](#middleware-parameters)
 * [Terminable Middleware](#terminable-middleware)
 
@@ -48,7 +51,7 @@ public function handle($request, Closure $next)
 **Global Middleware** In every request. <br>
 From <code>$middleware</code> property of your <code>app/Http/Kernel.php</code> class.
 
-**Assigning Middleware To Routes/Controller** <br>
+**Assigning Middleware To Routes** <br>
 From <code>$routeMiddleware</code> property of your <code>app/Http/Kernel.php</code> class.
 ```php
 protected $routeMiddleware = [

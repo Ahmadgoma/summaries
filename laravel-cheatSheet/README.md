@@ -8,3 +8,4 @@ From <code>Register</code> method on <code>provider</code> classes you can bind 
 From <code>Boot</code> method on <code>provider</code> classes you can bootstrap any thing you want (route/view/event).
 * **[Routing](./docs/routing.md)** <br>
 * **[Middleware](./docs/middleware.md)** <br>
+* **[Controllers](./docs/controllers.md)** <br>
