@@ -9,3 +9,5 @@ From <code>Boot</code> method on <code>provider</code> classes you can bootstrap
 * **[Routing](./docs/routing.md)** <br>
 * **[Middleware](./docs/middleware.md)** <br>
 * **[Controllers](./docs/controllers.md)** <br>
+* **[Requests](./docs/requests.md)** <br>
+Also learn about <code>Cookies</code> and <code>Files</code>.
