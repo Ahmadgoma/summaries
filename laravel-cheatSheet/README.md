@@ -12,4 +12,4 @@ From <code>Boot</code> method on <code>provider</code> classes you can bootstrap
 * **[Requests](./docs/requests.md)** <br>
 Also learn about <code>Cookies</code> and <code>Files</code>.
 * **[Responses](./docs/responses.md)** <br>
-* **[Views](./docs/views.md)** <br>
+* **[URL Generation](./docs/url-generation.md)** <br>
