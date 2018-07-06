@@ -14,9 +14,9 @@
     * Route Name Prefixes
 * [Route Model Binding](#route-model-binding)
     * Implicit Binding
-    * Explicit Binding
+    * **Explicit Binding**
         * Customizing The Resolution Logic
-* [Rate Limiting](#rate-limiting)
+* [**Rate Limiting**](#rate-limiting)
 * [Accessing The Current Route](#accessing-the-current-route)
 
 

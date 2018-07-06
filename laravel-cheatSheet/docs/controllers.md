@@ -5,12 +5,12 @@
 * [Resource Controllers](#resource-controllers)
     * Specifying The Resource Model
     * Partial Resource Routes
-    * API Resource Routes
+    * **API Resource Routes**
     * Naming Resource Routes
     * Naming Resource Route Parameters
-    * Localizing Resource URIs
+    * **Localizing Resource URIs**
     * Supplementing Resource Controllers
-* [Route Caching](#route-caching)
+* [**Route Caching**](#route-caching)
 
 ### Single Action Controllers
 If you would like to define a controller that only handles a single action, you may place a single <code>__invoke</code> method on the controller.

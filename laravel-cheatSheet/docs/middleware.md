@@ -6,7 +6,7 @@
     * Global Middleware
     * Assigning Middleware To Routes
     * Middleware Groups
-* [Middleware Parameters](#middleware-parameters)
+* [**Middleware Parameters**](#middleware-parameters)
 * [Terminable Middleware](#terminable-middleware)
 
 ### Defining Middleware

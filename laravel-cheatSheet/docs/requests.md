@@ -8,16 +8,16 @@
 * [Retrieving Input](#retrieving-input)
     * Retrieving All Input Data
     * Retrieving An Input Value
-    * Retrieving Input From The Query String
+    * **Retrieving Input From The Query String**
     * Retrieving A Portion Of The Input Data
     * Determining If An Input Value Is Present
     * Determining If An Input Value Is Present
 * [Old Input](#old-input)
-    * Flashing Input To The Session
+    * **Flashing Input To The Session**
     * Flashing Input Then Redirecting
     * Retrieving Old Input
 * [Cookies](#cookies)
-    * Retrieving Cookies From Requests
+    * **Retrieving Cookies From Requests**
     * Attaching Cookies To Responses
     * Generating Cookie Instances
 * [Files](#files)
