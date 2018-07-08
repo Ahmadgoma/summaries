@@ -18,3 +18,4 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 * **[URL Generation](./docs/url-generation.md)** <br>
 * **[Session](./docs/session.md)** <br>
 * **[Validation Rules](./docs/validation-rules.md)** <br>
+* **[Error Handling](./docs/error-handling.md)** <br>
