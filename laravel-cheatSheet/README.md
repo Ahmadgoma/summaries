@@ -17,3 +17,4 @@ Also learn about <code>Cookies</code> and <code>Files</code>.
 Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File Downloads/Responses</code>.
 * **[URL Generation](./docs/url-generation.md)** <br>
 * **[Session](./docs/session.md)** <br>
+* **[Validation Rules](./docs/validation-rules.md)** <br>
