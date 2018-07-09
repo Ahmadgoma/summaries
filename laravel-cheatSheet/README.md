@@ -19,3 +19,4 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 * **[Session](./docs/session.md)** <br>
 * **[Validation Rules](./docs/validation-rules.md)** <br>
 * **[Error Handling](./docs/error-handling.md)** <br>
+* **[Logging](./docs/logging.md)** <br>
