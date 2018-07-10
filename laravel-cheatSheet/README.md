@@ -7,6 +7,7 @@ Here I'll collect my cheat sheet from Laravel documentation.
 From <code>Register</code> method on <code>provider</code> classes you can bind any object you want.
 * **[Service Providers](./docs/service-providers.md)** <br>
 From <code>Boot</code> method on <code>provider</code> classes you can bootstrap any thing you want (route/view/event).
+
 ### The Basics
 * **[Routing](./docs/routing.md)** <br>
 * **[Middleware](./docs/middleware.md)** <br>
@@ -20,3 +21,6 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 * **[Validation Rules](./docs/validation-rules.md)** <br>
 * **[Error Handling](./docs/error-handling.md)** <br>
 * **[Logging](./docs/logging.md)** <br>
+
+### Frontend
+* **[Blade Templates](./docs/blade-templates.md)** <br>

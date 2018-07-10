@@ -13,6 +13,7 @@
 All configuration you can find them on <code>config/logging.php</code>
 
 **Available Channel Drivers** <br>
+
 Name | Description
 --- | ---
 <code>stack</code> | A wrapper to facilitate creating "multi-channel" channels
