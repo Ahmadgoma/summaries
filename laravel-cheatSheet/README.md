@@ -25,3 +25,6 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 ### Frontend
 * **[Blade Templates](./docs/blade-templates.md)** <br>
 * **[Localization](./docs/localization.md)** <br>
+
+### Security
+* **[Authentication](./docs/authentication.md)** <br>
