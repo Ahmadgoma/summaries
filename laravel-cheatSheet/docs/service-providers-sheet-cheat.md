@@ -6,6 +6,7 @@
 * [Views](#views)
 * [Validation Rules](#validation-rules)
 * [Blade Templates](#blade-templates)
+* [Authorization](#authorization)
 
 ### Routing
 **Global Constraints**
@@ -199,4 +200,62 @@ public function boot()
 // @else
     // The application is not in the local or testing environment...
 // @endenv
+```
+
+### Authorization
+**Writing Gates**
+```php
+public function boot()
+{
+    $this->registerPolicies();
+
+    Gate::define('update-post', function ($user, $post) {
+        return $user->id == $post->user_id;
+    });
+
+    // or
+    Gate::define('update-post', 'PostPolicy@update');
+}
+```
+
+**Resource Gates**
+```php
+public function boot()
+{
+    $this->registerPolicies();
+
+    // view, create, update, delete
+    Gate::resource('posts', 'App\Policies\PostPolicy');
+
+    // For specific gates
+    Gate::resource('posts', 'PostPolicy', [
+        'image' => 'updateImage',
+        'photo' => 'updatePhoto',
+    ]);
+}
+```
+
+**Intercepting Gate Checks**
+```php
+Gate::before(function ($user, $ability) {
+    if ($user->isSuperAdmin()) {
+        return true;
+    }
+});
+```
+Or you can use after
+```php
+Gate::after(function ($user, $ability, $result, $arguments) {
+    //
+});
+```
+
+**Registering Policies**
+```php
+// App\Providers\AuthServiceProvider
+
+protected $policies = [
+    Post::class => PostPolicy::class,
+];
+
 ```
