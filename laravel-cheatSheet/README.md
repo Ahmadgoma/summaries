@@ -31,3 +31,4 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 ### Security
 * **[Authentication](./docs/authentication.md)** <br>
 * **[Authorization](./docs/authorization.md)** <br>
+* **[Encryption](./docs/encryption.md)** <br>
