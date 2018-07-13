@@ -33,3 +33,6 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 * **[Authorization](./docs/authorization.md)** <br>
 * **[Encryption](./docs/encryption.md)** <br>
 * **[Hashing](./docs/hashing.md)** <br>
+
+### Database
+* **[Raw SQL Queries](./docs/raw-sql-queries.md)** <br>

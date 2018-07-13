@@ -7,6 +7,7 @@
 * [Validation Rules](#validation-rules)
 * [Blade Templates](#blade-templates)
 * [Authorization](#authorization)
+* [Raw SQL Queries](#raw-sql-queries)
 
 ### Routing
 **Global Constraints**
@@ -258,4 +259,17 @@ protected $policies = [
     Post::class => PostPolicy::class,
 ];
 
+```
+
+### Raw SQL Queries
+**Listening For Query Events**
+```php
+public function boot()
+{
+    DB::listen(function ($query) {
+        // $query->sql
+        // $query->bindings
+        // $query->time
+    });
+}
 ```
