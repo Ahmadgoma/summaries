@@ -35,7 +35,7 @@ public $singletons = [
 [More here - service container](./service-container.md/#simple-bindings-factory-dp)
 
 ### Boot Method
-What if we need to register a view composer within our service provider? This should be done within the boot method. <br>
+What if we need to register a view composer within our service provider? This should be done within the `boot` method. <br>
 **This method is called after all other service providers have been registered.**
 ```php
 public function boot()
@@ -83,3 +83,4 @@ public function provides()
     return [Connection::class];
 }
 ```
+To defer the loading of a provider, set the `defer` property to `true` and define a `provides` method. The `provides` method should return the service container bindings registered by the provider.

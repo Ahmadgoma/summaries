@@ -28,5 +28,8 @@ Also you may type-hint the `PSR-11` container interface to obtain an instance of
 There is no need to bind classes into the container if they do not depend on any interfaces. The container does not need to be instructed on how to build these objects, since it can automatically resolve these objects using reflection.
 
 ### Service Providers
-* From `Register` method on provider classes you can bind any object you want.
-* From `Boot` method on provider classes you can bootstrap any thing you want (`route`/`view`/`event`).
+`Service providers` are the central place of all Laravel application bootstrapping.including registering service container `bindings`, `event listeners`, `middleware`, and even `routes`.
+* From `Register` method you should only bind things into the service container. You should never attempt to register any `event listeners`, `routes`, or any other piece of functionality within the `Register` method.
+* From `Boot` method on provider classes you can bootstrap any thing you want (`route`/`view`/`event`). This method is called after all other service providers have been registered, meaning you have access to all other services that have been registered by the framework.
+
+You may type-hint dependencies for your service provider's `boot` method. Also your provider is only registering bindings in the service container, you may choose to `defer` its registration until one of the registered bindings is actually needed.
