@@ -16,6 +16,7 @@
     * Implicit Binding
     * **Explicit Binding**
         * Customizing The Resolution Logic
+* [Fallback Routes](#fallback-routes)
 * [**Rate Limiting**](#rate-limiting)
 * [Accessing The Current Route](#accessing-the-current-route)
 
@@ -26,6 +27,7 @@ Route::redirect('/here', '/there', 301);
 ```
 
 ### View Routes
+If your route only needs to return a view, you may use the `Route::view` method.
 ```php
 Route::view('/welcome', 'welcome');
 
@@ -140,6 +142,7 @@ Route::name('admin.')->group(function () {
 
 ### Route Model Binding
 **Implicit Binding**
+
 Laravel automatically resolves Eloquent models defined in routes or controller actions whose type-hinted variable names match a route segment name.
 ```php
 // Select by id
@@ -156,6 +159,7 @@ public function getRouteKeyName()
 }
 ```
 **Explicit Binding**
+
 To register an explicit binding, use the router's <code>model</code> method to specify the class for a given parameter. On <code>RouteServiceProvider</code>
 ```php
 public function boot()
@@ -184,6 +188,14 @@ public function boot()
 }
 ```
 
+### Fallback Routes
+Using the `Route::fallback` method, you may define a route that will be executed when no other route matches the incoming request.
+```php
+Route::fallback(function () {
+    //
+});
+```
+
 ### Rate Limiting
 ```php
 Route::middleware('auth:api', 'throttle:60,1')->group(function () {
@@ -193,6 +205,7 @@ Route::middleware('auth:api', 'throttle:60,1')->group(function () {
 });
 ```
 **Dynamic Rate Limiting**
+
 On your <code>model</code> declare attribute with same name on Route, in this case <code>rate_limit</code>.
 ```php
 Route::middleware('auth:api', 'throttle:rate_limit,1')->group(function () {
