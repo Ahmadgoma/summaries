@@ -1,4 +1,4 @@
-# Service Providers Sheet Cheat
+# Service Providers hints
 
 * [Routing](#routing)
 * [Controllers](#controllers)

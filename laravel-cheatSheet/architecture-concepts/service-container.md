@@ -10,6 +10,7 @@
 * [Extending Bindings](#extending-bindings)
 * [Resolving](#resolving)
 * [Container Events](#container-events)
+* [PSR-11](#psr-11)
 
 The Laravel service container is a powerful tool for managing class dependencies and performing dependency injection.
 ```php
@@ -25,13 +26,19 @@ public function __construct(UserRepository $users)
 }
 ```
 
+> There is no need to bind classes into the container if they do not depend on any interfaces. The container does not need to be instructed on how to build these objects, since it can automatically resolve these objects using reflection.
+
 ### Simple Bindings (Factory DP)
+Within a service provider, you always have access to the container via the `$this->app` property.
+* `HelpSpot\API` The class we want to resolve it.
+* `$app` is the container itself, we can use it to resolve sub-dependencies of the object we are building.
+* `make()` [See here](#resolving)
 ```php
 $this->app->bind('HelpSpot\API', function ($app) {
     return new HelpSpot\API($app->make('HttpClient'));
 });
 ```
-[More here - service providers](./service-providers.md/#simple-bindings)
+[More on service providers cheat sheet](./service-providers.md/#simple-bindings)
 
 ### Binding A Singleton (Singleton DP)
 ```php
@@ -72,7 +79,7 @@ public function __construct(EventPusher $pusher)
     $this->pusher = $pusher;
 }
 ```
-This statement tells the container that it should inject `EventPusher` when the <code>RedisEventPusher</code> class needs an implementation of <code>EventPusher</code>.
+This statement tells the container that it should inject `EventPusher` interface when the <code>RedisEventPusher</code> class needs an implementation of <code>EventPusher</code>.
 
 ### Contextual Binding
 Sometimes you may have two classes that utilize the same interface, but you wish to inject different implementations into each class.
@@ -135,5 +142,17 @@ $this->app->resolving(function ($object, $app) {
 
 $this->app->resolving(HelpSpot\API::class, function ($api, $app) {
     // Called when container resolves objects of type "HelpSpot\API"...
+});
+```
+
+### PSR-11
+you may type-hint the `PSR-11` container interface to obtain an instance of the Laravel container:
+```php
+use Psr\Container\ContainerInterface;
+
+Route::get('/', function (ContainerInterface $container) {
+    $service = $container->get('Service');
+
+    //
 });
 ```
