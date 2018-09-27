@@ -32,7 +32,7 @@ public $singletons = [
     DowntimeNotifier::class => PingdomDowntimeNotifier::class,
 ];
 ```
-[More here - service container](./service-container.md)
+[More here - service container](./service-container.md/#simple-bindings-factory-dp)
 
 ### Boot Method
 What if we need to register a view composer within our service provider? This should be done within the boot method. <br>

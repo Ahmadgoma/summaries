@@ -1,7 +1,7 @@
 # Service Container
 
-* [Simple Bindings](#simple-bindings)
-* [Binding A Singleton](#binding-a-singleton)
+* [Simple Bindings](#simple-bindings-factory-dp)
+* [Binding A Singleton](#binding-a-singleton-singleton-dp)
 * [Binding Instances](#binding-instances)
 * [Binding Primitives](#binding-primitives)
 * [Binding Interfaces To Implementations](#binding-interfaces-to-implementations)
@@ -31,7 +31,7 @@ $this->app->bind('HelpSpot\API', function ($app) {
     return new HelpSpot\API($app->make('HttpClient'));
 });
 ```
-[More here - service providers](./service-providers.md)
+[More here - service providers](./service-providers.md/#simple-bindings)
 
 ### Binding A Singleton (Singleton DP)
 ```php
@@ -57,13 +57,22 @@ $this->app->when('App\Http\Controllers\UserController')
 ```
 
 ### Binding Interfaces To Implementations
+let's assume we have an `EventPusher` interface and a `RedisEventPusher` implementation.
 ```php
 $this->app->bind(
     'App\Contracts\EventPusher',
     'App\Services\RedisEventPusher'
 );
+
+// App\Controller\RedisEventPusher
+use App\Contracts\EventPusher;
+
+public function __construct(EventPusher $pusher)
+{
+    $this->pusher = $pusher;
+}
 ```
-This statement tells the container that it should inject the <code>RedisEventPusher</code> when a class needs an implementation of <code>EventPusher</code>.
+This statement tells the container that it should inject `EventPusher` when the <code>RedisEventPusher</code> class needs an implementation of <code>EventPusher</code>.
 
 ### Contextual Binding
 Sometimes you may have two classes that utilize the same interface, but you wish to inject different implementations into each class.
