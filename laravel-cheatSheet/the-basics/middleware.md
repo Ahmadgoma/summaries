@@ -52,7 +52,8 @@ public function handle($request, Closure $next)
 From <code>$middleware</code> property of your <code>app/Http/Kernel.php</code> class.
 
 **Assigning Middleware To Routes** <br>
-From <code>$routeMiddleware</code> property of your <code>app/Http/Kernel.php</code> class.
+
+If you would like to assign middleware to specific routes, From <code>$routeMiddleware</code> property of your <code>app/Http/Kernel.php</code> class.
 ```php
 protected $routeMiddleware = [
     'auth' => \Illuminate\Auth\Middleware\Authenticate::class
@@ -62,9 +63,15 @@ protected $routeMiddleware = [
 Route::get('admin/profile', function () {
     //
 })->middleware('auth');
+// or
+Route::get('/', function () {
+    //
+})->middleware('first', 'second');
 ```
 
 **Middleware Groups** <br>
+
+Sometimes you may want to group several middleware under a single key to make them easier to assign to routes.
 From <code>$middlewareGroups</code> property of your <code>app/Http/Kernel.php</code> class.
 ```php
 protected $middlewareGroups = [
@@ -82,13 +89,14 @@ protected $middlewareGroups = [
 Route::get('/', function () {
     //
 })->middleware('web');
-
+// or
 Route::group(['middleware' => ['web']], function () {
     //
 });
 ```
 
 ### Middleware Parameters
+Middleware can also receive additional parameters. For example `$role` parameter.
 ```php
 public function handle($request, Closure $next, $role)
 {

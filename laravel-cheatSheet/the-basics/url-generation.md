@@ -41,16 +41,23 @@ Route::get('/post/{post}', function () {
 
 // then
 echo route('post.show', ['post' => 1]);
+// http://example.com/post/1
+```
+You may pass Eloquent models as parameter values. The route helper will automatically extract the model's primary key:
+```php
 echo route('post.show', ['post' => $post]);
 // http://example.com/post/1
 ```
 **Signed URLs**
+
+Signed URLs have a "signature" hash appended to the query string which allows Laravel to verify that the URL has not been modified since it was created.
 ```php
 use Illuminate\Support\Facades\URL;
 return URL::signedRoute('unsubscribe', ['user' => 1]);
 // https://example.com/unsubscribe/1?signature=30a3877b00890fff0d7ca25f82c6387ff16a98d21008ddc9689ed3c20ef13cd4
-
-// for temporary signed
+```
+If you would like to generate a temporary signed route URL that expires, you may use the `temporarySignedRoute` method:
+```php
 return URL::temporarySignedRoute(
     'unsubscribe', now()->addMinutes(30), ['user' => 1]
 );

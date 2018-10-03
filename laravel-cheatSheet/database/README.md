@@ -1,7 +1,5 @@
 # Database
 
 ## Index
-* **[Raw SQL Queries](./docs/raw-sql-queries.md)**
-
-## The Brief
-* **[Database Sheet Cheat](./database-sheet-cheat.md)**
+* **[Getting Started & Raw SQL Queries](./raw-sql-queries.md)**
+* **[Query Builder](./query-builder.md)**

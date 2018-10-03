@@ -81,6 +81,8 @@ Route::resource('photos', 'PhotoController')->names([
 ]);
 ```
 **Naming Resource Route Parameters**
+
+By default, `Route::resource` will create the route parameters for your resource routes based on the "singularized" version of the resource name. To override this use `parameters` method.
 ```php
 Route::resource('user', 'AdminUserController')->parameters([
     'user' => 'admin_user'
@@ -88,7 +90,8 @@ Route::resource('user', 'AdminUserController')->parameters([
 // /user/{admin_user}
 ```
 **Localizing Resource URIs** <br>
-From <code>AppServiceProvider</code> use <code>Route::resourceVerbs</code> method.
+
+By default, `Route::resource` will create resource URIs using English verbs.To change that from <code>AppServiceProvider</code> use <code>Route::resourceVerbs</code> method.
 
 ```php
 public function boot()
@@ -102,7 +105,8 @@ public function boot()
 
 // /fotos/{foto}/editar
 ```
-**Supplementing Resource Controllers** <br>
+**Supplementing Resource Controllers**
+
 If you need to add additional routes to a resource controller beyond the default set of resource routes, you should define those routes <code>before</code> your call to <code>Route::resource</code>.
 ```php
 Route::get('photos/popular', 'PhotoController@method');

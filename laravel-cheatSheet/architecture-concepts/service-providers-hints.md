@@ -7,7 +7,7 @@
 * [Validation Rules](#validation-rules)
 * [Blade Templates](#blade-templates)
 * [Authorization](#authorization)
-* [Raw SQL Queries](#raw-sql-queries)
+* [Getting Started & Raw SQL Queries](#raw-sql-queries)
 
 ### Routing
 **Global Constraints**
@@ -66,7 +66,9 @@ public function boot()
 ```
 
 ### Response
-**Localizing Resource URIs**
+**Response Macros**
+
+If you would like to define a custom response that you can re-use in a variety of your routes and controllers. From your service providers.
 ```php
 public function boot()
 {

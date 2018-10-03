@@ -1,4 +1,4 @@
-# Raw SQL Queries
+# Getting Started & Raw SQL Queries
 
 * [Configuration](#configuration)
     * Read & Write Connections
@@ -135,5 +135,7 @@ if (!$query) {
 }
 
 DB::commit();
+# or
+DB::rollBack();
 ```
 [More information here](http://fideloper.com/laravel-database-transactions)

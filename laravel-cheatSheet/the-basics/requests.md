@@ -153,7 +153,7 @@ $username = $request->old('username');
 **Retrieving Cookies From Requests**
 ```php
 $value = $request->cookie('name');
-
+// or
 $value = Cookie::get('name');
 ```
 **Attaching Cookies To Responses**
@@ -161,11 +161,13 @@ $value = Cookie::get('name');
 return response('Hello World')->cookie(
     'name', 'value', $minutes
 );
+// full parameters
 return response('Hello World')->cookie(
     'name', 'value', $minutes, $path, $domain, $secure, $httpOnly
 );
 // or
 Cookie::queue(Cookie::make('name', 'value', $minutes));
+// or
 Cookie::queue('name', 'value', $minutes);
 ```
 **Generating Cookie Instances**
@@ -179,6 +181,7 @@ return response('Hello World')->cookie($cookie);
 **Retrieving Uploaded Files**
 ```php
 $file = $request->file('photo');
+// or
 $file = $request->photo;
 // Check
 if ($request->hasFile('photo')) {

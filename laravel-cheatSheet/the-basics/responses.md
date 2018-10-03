@@ -90,6 +90,8 @@ return redirect()->route('login');
 return redirect()->route('profile', ['id' => 1]);
 ```
 **Populating Parameters Via Eloquent Models**
+
+You may pass the model itself. The ID will be extracted automatically.
 ```php
 // For a route with the following URI: profile/{id}
 

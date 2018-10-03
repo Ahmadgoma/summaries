@@ -14,6 +14,3 @@ Also learn more about <code>Cookies</code> <code>Redirecting</code> <code>File D
 * **[Validation Rules](./validation-rules.md)** <br>
 * **[Error Handling](./error-handling.md)** <br>
 * **[Logging](./logging.md)** <br>
-
-## The Brief
-* **[The Basics Sheet Cheat](./the-basics-sheet-cheat.md)** <br>
